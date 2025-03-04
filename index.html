@@ -3,28 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Wetter-Kachel</title>
+    <title>OrtsFw Nortmoor | Einsatzmeldesystem</title>
     <link href="https://einsatzmeldesystem.de/ems/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://einsatzmeldesystem.de/ems/js/jquery-3.5.1.min.js"></script>
+    <script src="https://einsatzmeldesystem.de/ems/js/bootstrap.min.js"></script>
 </head>
 <body>
     <div class="container">
-        <div class="panel panel-default-red ems-content-widget white-bg no-padding ems-overflow-hidden">
-            <div class="panel-heading-red ems-position-relative">
-                <h2 class="ems-inline-block">
-                    <div class="ems-symbol"><img src="https://einsatzmeldesystem.de/ems/images/symbol_white.png" width="100%"></div>
-                    Warnung vor Unwetter
-                </h2>
-            </div>
-            <center><span style="font-size: 2em; line-height: 1em;">Status Führungskräfte</span></center>
-            <div class="text-center">
-                <span class="uhr_gross" style="font-size: 6em; line-height: 1em;">1:32</span><br />
-                <span class="datum_gross" style="font-size: 2.5em; line-height: 1em;">Mittwoch, 04.03.2025</span>
+        <div class="ems-flex-row flex-content-row">
+            <!-- Wetter Widget -->
+            <div class="col-1">
+                <div class="ems-content-widget blue-bg no-padding ems-overflow-hidden text-center" style="height: 525px;">
+                    <iframe src="https://www.meteoblue.com/de/wetter/widget/three/nortmoor_deutschland_2861807?geoloc=fixed&nocurrent=0&noforecast=0&days=4&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&layout=dark" frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox" style="height: 100%; width: 100%; border: none"></iframe>
+                </div>
             </div>
             
-            <div class="ems-content-widget white-bg ems-position-relative ems-content-img-bg ems-dwd-map-1" style="width: 100%; height: auto; margin-top: 20px;">
-                <h2 class="ems-position-relative">DWD Karte</h2>
-                <h3 class="ems-position-relative">Niedersachsen</h3>
-                <img src="https://www.dwd.de/DWD/warnungen/warnapp_gemeinden/json/warnungen_gemeinde_map_nib.png" alt="DWD Karte" class="img-responsive content-bg-img img-dwd-map-1">
+            <!-- Warnung und Uhrzeit -->
+            <div class="col-2">
+                <div class="panel panel-default-red ems-content-widget white-bg no-padding ems-overflow-hidden">
+                    <div class="panel-heading-red ems-position-relative">
+                        <h2 class="ems-inline-block">
+                            <div class="ems-symbol"><img src="https://einsatzmeldesystem.de/ems/images/symbol_white.png" width="100%"></div>
+                            Warnung vor Unwetter
+                        </h2>
+                    </div>
+                    <center><span style="font-size: 2em; line-height: 1em;">Status Führungskräfte</span></center>
+                    <div class="text-center">
+                        <span class="uhr_gross" style="font-size: 6em; line-height: 1em;">1:32</span><br />
+                        <span class="datum_gross" style="font-size: 2.5em; line-height: 1em;">Mittwoch, 04.03.2025</span>
+                    </div>
+                </div>
+                
+                <!-- DWD Wetterkarte -->
+                <div class="ems-content-widget white-bg ems-position-relative ems-content-img-bg ems-dwd-map-1" style="width: 100%; height: auto; margin-top: 20px;">
+                    <h2 class="ems-position-relative">DWD Karte</h2>
+                    <h3 class="ems-position-relative">Niedersachsen</h3>
+                    <img src="https://www.dwd.de/DWD/warnungen/warnapp_gemeinden/json/warnungen_gemeinde_map_nib.png" alt="DWD Karte" class="img-responsive content-bg-img img-dwd-map-1">
+                </div>
+            </div>
+
+            <!-- Termine-Kachel -->
+            <div class="col-1">
+                <div class="panel panel-default col-1 ems-content-widget white-bg no-padding ems-overflow-hidden">
+                    <div class="panel-heading ems-position-relative">
+                        <h2 class=""><i class="far fa-calendar-alt"></i> Termine</h2>
+                        <h3>OrtsFw Nortmoor</h3>
+                    </div>
+                    <div style="padding-left: 5px; padding-right: 5px; padding-top: 15px;">
+                        <div style="padding-left: 5px; margin-bottom: 5px; border-left-color: #093E7B; border-left-style: solid; border-left-width: 5px;">
+                            <div style="vertical-align: top; display: inline-block; width: calc((100% - 0em));">
+                                <p><b>Müllsammelaktion</b><br>Sa. 08.03.2025 ab 08:45 Uhr</p>
+                            </div>
+                        </div>
+                        <div style="padding-left: 5px; margin-bottom: 5px; border-left-color: #093E7B; border-left-style: solid; border-left-width: 5px;">
+                            <div style="vertical-align: top; display: inline-block; width: calc((100% - 0em));">
+                                <p><b>Dienst</b><br>FFW Nortmoor<br>Fr. 21.03.2025 ab 20:00 Uhr</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
